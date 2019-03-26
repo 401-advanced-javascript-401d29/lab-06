@@ -6,7 +6,7 @@
 ### Author: Erin Trainor
 
 ### Links and Resources
-* [pull request](PR here)
+* [pull request](https://github.com/401-advanced-javascript-401d29/simple-api/pull/6)
 * [front-end](https://codesandbox.io/s/w638oyk7o8)
 
 #### Documentation
