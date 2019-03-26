@@ -6,7 +6,7 @@
 ### Author: Erin Trainor
 
 ### Links and Resources
-* [pull request](http://xyz.com)
+* [pull request](PR here)
 * [front-end](https://codesandbox.io/s/w638oyk7o8)
 
 #### Documentation
