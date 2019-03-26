@@ -10,7 +10,7 @@
 * [front-end](https://codesandbox.io/s/w638oyk7o8)
 
 #### Documentation
-* [swagger](http://xyz.com) (API assignments only)
+* [swagger](./docs/swagger.json)
 
 ### Setup
 
@@ -32,5 +32,3 @@
     * `PUT` - echo '{"name":"Dog Socks", "display_name":"Paw Grip Socks", "description":"For when you want your dog to be able to dance on slick surfaces", "category":"Pet", "_id":2}' | http PUT :3000/products/2
     * `DELETE` - http DELETE :3000/products/2
   
-#### UML
-Link to an image of the UML for your application and response to events
