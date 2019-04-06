@@ -31,4 +31,5 @@
   * `/products/:id/` 
     * `PUT` - echo '{"name":"Dog Socks", "display_name":"Paw Grip Socks", "description":"For when you want your dog to be able to dance on slick surfaces", "category":"Pet", "_id":2}' | http PUT :3000/products/2
     * `DELETE` - http DELETE :3000/products/2
-  
+  #### Start the app
+  * run json-server --watch= ./data/db.json from the root then go to the front end to see swagger working.
