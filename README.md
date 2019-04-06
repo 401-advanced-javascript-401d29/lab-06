@@ -1,51 +1,36 @@
-# LAB: HTTP and REST
+![CF](http://i.imgur.com/7v5ASc8.png) LAB
+=================================================
 
-The goal for this lab is to get your hands dirty in using and properly documenting an API
+## HTTP and REST
 
-## Before you begin
-Refer to *Getting Started* in [lab-instructions.md](../../../reference/submission-instructions/labs.md) for complete setup instructions
+### Author: Erin Trainor
 
-## Requirements
+### Links and Resources
+* [pull request](https://github.com/401-advanced-javascript-401d29/simple-api/pull/6)
+* [Resubmit pull request](https://github.com/401-advanced-javascript-401d29/simple-api/pull/7)
+* [front-end](https://codesandbox.io/s/w638oyk7o8)
 
-### Build a working JSON Server
+#### Documentation
+* [swagger](./docs/swagger.json)
 
-* Implement an API server suitable for a storefront, using json-server
-  * Install `json-server` globally
-  * Create a new repository called "simple-api"
-  * Create a folder called `data` with a `db.json` file
-  * Start json-server from within the `simple-api` folder and "watch" your database file
-    * `json-server --watch=./data/db.json`
-  * Data models should contain the following fields:
-    * `categories`
-      * `_id`, `name`, `display_name`, `description`
-    * `products`
-      * `_id`, `category`, `name`, `display_name`, `description`
-  * Your api will (should) respond to the following endpoints:
-    * `/categories`  GET, POST
-    * `/categories/:id/` PUT, DELETE
-    * `/products`  GET, POST
-    * `/products/:id/` PUT, DELETE
-* Document your new api with Swagger
-  * Within your API, Create a folder called `docs`
-  * Write and publish swagger documentation for your API
-  * Compose with [Swagger Editor](https://swagger.io/tools/swagger-editor/)
-* Connect a web server
-  * Open this [React Application](https://codesandbox.io/s/w638oyk7o8) and "Fork" it
-  * Open the .env file and enter the URL to your API Server
-  * This server is configured to use the routes noted in the first lab requirement
-  * If your lab is working, this app will show your API Data!
+### Setup
 
-### Testing
-**No automated testing is required for this assignment**
-
-
-### Stretch Goal:
-* Alter json-server to produce proper standardized API output
-  * Rather than just an array of objects on a get
-    * Return an object with a `count: ##` property and a `results: []` array
-    * To do this, you'll need a server.js that requires in json-server and which overrides the renderer.  You will find instructions and examples on the json-server github page
-  * Alter the swagger docs to reflect the new json format
-  * Alter the www server to use the new json format
-
-## Assignment Submission Instructions
-Refer to the [lab-instructions.md](../../../reference/submission-instructions/labs.md) for the complete lab submission process and expectations
+#### Terminal Commands to Manipulate the API
+* Categories
+  * `/categories`  
+    * `GET` - http GET :3000/categories
+    * `POST` - echo '{"name":"Footwear", "display_name":"Footwear", "description":"Unusual things to wear on your feet"}' | http POST :3000/categories
+    * `POST` - echo '{"name":"Pet", "display_name":"Pet Products", "description":"Strang things your pet will love"}' | http POST :3000/categories
+  * `/categories/:id/` 
+    * `PUT` - echo '{"name":"Footwear", "display_name":"Shoes", "description":"Unusual thingsto wear on your feet", "_id":"1}' | http PUT :3000/categories/1
+    * `DELETE` - http DELETE :3000/categories/1
+* Products
+  * `/products`  
+    * `GET` - http GET :3000/products
+    * `POST` - echo '{"name":"Bread Slippers", "display_name":"Loafers", "description":"When you want your feet to look like a loaf of bread", "category":"Footwear"}' | http POST :3000/products
+    * `POST` - echo '{"name":"Dog Socks", "display_name":"Paw Grip Socks", "description":"For when you want your dog to be able to run on slick surfaces", "category":"Pet"}' | http POST :3000/products
+  * `/products/:id/` 
+    * `PUT` - echo '{"name":"Dog Socks", "display_name":"Paw Grip Socks", "description":"For when you want your dog to be able to dance on slick surfaces", "category":"Pet", "_id":2}' | http PUT :3000/products/2
+    * `DELETE` - http DELETE :3000/products/2
+  #### Start the app
+  * run json-server --watch= ./data/db.json from the root then go to the front end to see swagger working.
